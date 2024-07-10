@@ -5,7 +5,7 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_USER: scp_root
-      POSTGRES_PASSWORD: VitoRkhaled123.
+      POSTGRES_PASSWORD: scp_password.
       POSTGRES_DB: scp_bd
     volumes:
       - postgres_data:/var/lib/postgresql/data
