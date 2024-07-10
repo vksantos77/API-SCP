@@ -11,3 +11,7 @@ ApiScp é uma API desenvolvida em ASP.NET Web API que permite acesso rápido e f
 - **Excluir SCP**: Remova um SCP do banco de dados.
 - **Buscar SCPs por Termo**: Pesquise SCPs por termos específicos.
 - **Buscar SCP por ID**: Pesquise um SCP específico pelo seu ID.
+
+### Utilização
+Acesso ao swagger: https://apiscp.azurewebsites.net/swagger/index.html
+caso queira ir direto para o GET https://apiscp.azurewebsites.net/api/scp
