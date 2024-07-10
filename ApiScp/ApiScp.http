@@ -1,0 +1,6 @@
+@ApiScp_HostAddress = http://localhost:5243
+
+GET {{ApiScp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
