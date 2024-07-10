@@ -14,4 +14,5 @@ ApiScp é uma API desenvolvida em ASP.NET Web API que permite acesso rápido e f
 
 ### Utilização
 Acesso ao swagger: https://apiscp.azurewebsites.net/swagger/index.html
+
 caso queira ir direto para o GET https://apiscp.azurewebsites.net/api/scp
