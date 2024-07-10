@@ -8,7 +8,7 @@ namespace ApiScp.Controllers
     [ApiController]
     public class ScpController : ControllerBase
     {
-     
+
         private readonly AppDbContext _context;
         public ScpController(AppDbContext context)
         {
@@ -19,8 +19,8 @@ namespace ApiScp.Controllers
         public ActionResult<List<Scp>> Get()
         {
             var scp_items = _context.Scps.ToList();
-            
-            if(scp_items.Count == 0 || scp_items is null)
+
+            if (scp_items.Count == 0 || scp_items is null)
             {
                 return NoContent();
             }
@@ -30,57 +30,58 @@ namespace ApiScp.Controllers
 
         // GET api/<ScpController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<Scp> Get(int id)
         {
-            return "value";
+            var scp = _context.Scps.FirstOrDefault(s => s.Id == id);
+
+            return Ok(scp);
         }
 
         // POST api/<ScpController>
-        [HttpPost]
-        public ActionResult Post(Scp scp)
-        {
-            //Console.WriteLine(scp.ToString());
+        //[HttpPost]
+        //public ActionResult Post(Scp scp)
+        //{
 
-            //if(scp == null)
-            //{
-            //    return BadRequest();
-            //}
-            //adicionando o scp na memória
-            _context.Scps.Add(scp);
-            //enviando ele para o banco
-            _context.SaveChanges();
-            
-            return Ok();
-        }
+        //    if (scp == null)
+        //    {
+        //        return BadRequest();
+        //    }
+
+        //    //enviando ele para o banco
+        //    _context.Scps.Add(scp);
+        //    _context.SaveChanges();
+
+        //    return Ok();
+        //}
 
         // PUT api/<ScpController>/5
-        [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Scp spc)
-        {
-            var ScpNotUpdated = _context.Scps.SingleOrDefault(i => i.Id == id);
-            if(ScpNotUpdated == null)
-            {
-                return NoContent();
-            }
-            //ScpNotUpdated.UpdateScp();
+        //[HttpPut("{id}")]
+        //public ActionResult Put(int id, [FromBody] Scp spc)
+        //{
+        //    var ScpNotUpdated = _context.Scps.SingleOrDefault(i => i.Id == id);
+        //    if (ScpNotUpdated == null)
+        //    {
+        //        return NoContent();
+        //    }
+        //    ScpNotUpdated.UpdateScp();
 
 
-            return Ok(ScpNotUpdated);
-        }
+        //    return Ok(ScpNotUpdated);
+        //}
 
         // DELETE api/<ScpController>/5
-        [HttpDelete("{id}")]
-        public ActionResult Delete(int id)
-        {
-            var scp = _context.Scps.SingleOrDefault(s => s.Id == id);
+        //[HttpDelete("{id}")]
+        //public ActionResult Delete(int id)
+        //{
+        //    var scp = _context.Scps.SingleOrDefault(s => s.Id == id);
 
-            if(scp == null)
-            {
-                return NoContent();
-            }
-            _context.Remove(scp);
-            _context.SaveChanges(); 
-            return Ok();
-        }
+        //    if (scp == null)
+        //    {
+        //        return NoContent();
+        //    }
+        //    _context.Remove(scp);
+        //    _context.SaveChanges();
+        //    return Ok();
+        //}
     }
 }
