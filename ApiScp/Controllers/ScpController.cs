@@ -29,12 +29,13 @@ namespace ApiScp.Controllers
         }
 
         // GET api/<ScpController>/5
-        [HttpGet("{id}")]
-        public ActionResult<Scp> Get(int id)
+        [HttpGet("{scpItem}")]
+        public ActionResult<Scp> Get(string scpItem)
         {
-            var scp = _context.Scps.FirstOrDefault(s => s.Id == id);
+            var scp = _context.Scps.FirstOrDefault(s => s.ItemNumber == scpItem);
 
             return Ok(scp);
+
         }
 
         // POST api/<ScpController>
