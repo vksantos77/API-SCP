@@ -39,21 +39,21 @@ namespace ApiScp.Controllers
         }
 
         // POST api/<ScpController>
-        //[HttpPost]
-        //public ActionResult Post(Scp scp)
-        //{
+        [HttpPost]
+        public ActionResult Post(Scp scp)
+        {
 
-        //    if (scp == null)
-        //    {
-        //        return BadRequest();
-        //    }
+            if (scp == null)
+            {
+                return BadRequest();
+            }
 
-        //    //enviando ele para o banco
-        //    _context.Scps.Add(scp);
-        //    _context.SaveChanges();
+            //enviando ele para o banco
+            _context.Scps.Add(scp);
+            _context.SaveChanges();
 
-        //    return Ok();
-        //}
+            return Ok();
+        }
 
         // PUT api/<ScpController>/5
         //[HttpPut("{id}")]
