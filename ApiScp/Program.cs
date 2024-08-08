@@ -48,15 +48,12 @@ namespace ApiScp
             app.UseSwagger();
             app.UseSwaggerUI();
 
-             
+            //usar o cors
+            app.UseCors("AllowSpecificOrigin"); 
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
-
             app.Run();
         }
     }
