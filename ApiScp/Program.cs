@@ -36,7 +36,7 @@ namespace ApiScp
             {
                 options.AddPolicy("AllowSpecificOrigin", builder =>
                 {
-                    builder.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+                    builder.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
                 });
             });
 
