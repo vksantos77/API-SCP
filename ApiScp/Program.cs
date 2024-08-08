@@ -31,6 +31,15 @@ namespace ApiScp
 
             builder.Services.AddDbContext<AppDbContext>(options => options.UseMySQL(sqlConnection));
 
+            //Configurando CORS para poder usar de forma livre
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin", builder =>
+                {
+                    builder.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -39,7 +48,7 @@ namespace ApiScp
             app.UseSwagger();
             app.UseSwaggerUI();
 
-
+             
 
             app.UseHttpsRedirection();
 
