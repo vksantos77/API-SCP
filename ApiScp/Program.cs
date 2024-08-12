@@ -36,7 +36,9 @@ namespace ApiScp
             {
                 options.AddPolicy("AllowSpecificOrigin", builder =>
                 {
-                    builder.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                    builder.WithOrigins("https://scp-wiki.vercel.app")
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
                 });
             });
 
